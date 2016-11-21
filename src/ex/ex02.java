@@ -10,14 +10,14 @@ public class ex02 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner scn = new Scanner(System.in);
-		System.out.println("請輸入資料與數字型態和想要轉換的數字型態(256,10):");
+		System.out.println("請輸入資料與數字型態和想要轉換的數字型態(256,10,8):");
 		int val1=scn.nextInt();
 		int val2=scn.nextInt();
 		int val3=scn.nextInt();
 		fun1(val1,val2);
 	}
 	public static int fun1(int val1,int val2){
-		String str = val1.toString();
+		String str = val1.toString("12354");
 		int sum=0;
 		int data[]=new int[str.length()];
 		char data1[]=str.toCharArray();
