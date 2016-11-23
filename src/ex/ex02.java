@@ -14,27 +14,33 @@ public class ex02 {
 		int val1=scn.nextInt();
 		int val2=scn.nextInt();
 		int val3=scn.nextInt();
-		fun1(val1,val2);
+		int x =fun1(val1,val2);
+		fun2(x,val3);
 	}
 	public static int fun1(int val1,int val2){
-		String str = val1.toString("12354");
+		String str = Integer.toString(val1);
 		int sum=0;
-		int data[]=new int[str.length()];
-		char data1[]=str.toCharArray();
+		//char data1[]=str.toCharArray();
+		int data0[] = new int[str.length()];
 		for(int i=0;i<str.length();i++){
-			data1[i]*=Math.pow(10, i);
-			sum+=data[i];
-			System.out.println(sum);
-		}System.out.println(sum);
+			data0[i]=val1%10;
+			val1/=10;
+			//System.out.println(data0[i]);
+		}
+		for(int i=str.length()-1;i>=0;i--){
+			data0[i]*=Math.pow(val2, i);
+			sum+=data0[i];
+			//System.out.println("data1="+data0[i]);
+		}//System.out.println(sum);
 		return sum;
 	}
-	public static void fun2(int val1,int val2){
+	public static void fun2(int val1,int val3){
 		int x = 0;
-		int b=(int) Math.ceil(Math.log(val1)/Math.log(2));
+		int b=(int) Math.ceil(Math.log(val1)/Math.log(val3));
 		int data [] = new int[b];
 		for(int i=b-1;i>=0;i--){
-			data[i]=(val1%2);
-			val1/=2;
+			data[i]=(val1%val3);
+			val1/=val3;
 		}
 		for(int i=0;i<b;i++){
 			System.out.print(data[i]);
